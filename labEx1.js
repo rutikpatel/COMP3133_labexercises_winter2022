@@ -19,15 +19,18 @@ fs.createReadStream('./input_countries.csv')
         if(row['country'] == "Canada")
         {
             var str = `${row['country']}, ${row['year']}, ${row['population']}\n`
+            const title = `country,year,population\n`
+            fs.writeFileSync('canada.txt',title)
             fs.appendFile('canada.txt', str, function (err) {
                 if(err)()=> {console.log(err)};
             });
 
         }
-        // data for USA
         else if(row['country'] == "United States")
         {
             var str = `${row['country']}, ${row['year']}, ${row['population']}\n`
+            const title = `country,year,population\n`
+            fs.writeFileSync('usa.txt',title)
             fs.appendFile('usa.txt', str, function (err) {
                 if(err)()=> {console.log(err)};
             });
